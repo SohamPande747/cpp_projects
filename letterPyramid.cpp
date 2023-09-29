@@ -17,21 +17,28 @@ class Pyramid
     {
         int h = p1.height;
         
-        for (int i = 0; i < h; i++)
+        if (h > 0 && h <=26)
         {
-            for (int j = h-1-i; j > 0; j--)
+            for (int i = 0; i < h; i++)
             {
-                cout << "  ";
+                for (int j = h-i-1; j > 0; j--)
+                {
+                    cout << "  ";
+                }
+                for (int j = 65; j < 65+i; j++)
+                {
+                    printf("%c ", j);
+                }
+                for (int j = 65 + i; j >= 65; j--)
+                {
+                    printf("%c ", j);
+                }
+                printf("\n");
             }
-            for (int j = 65; j < 65+i; j++)
-            {
-                printf("%c ", j);
-            }
-            for (int j = 65 + i; j >= 65; j--)
-            {
-                printf("%c ", j);
-            }
-            printf("\n");
+        }
+        else
+        {
+            cout << "Please enter a value in the bounds of alphabets...";
         }
     }
 };
